@@ -30,14 +30,29 @@ import (
 	"os"
 	"os/exec"
 	"regexp"
+	"runtime"
 	"strconv"
 	"strings"
 	"time"
 )
 
+var (
+	version	string
+	buildTime  string
+	commitHash string
+	branch     string
+)
+
 func main() {
+	version = "1.0.0"
 	configFile := kingpin.Flag("config", "MySQL configuration file name").Short('c').Default("config.yml").String()
-	kingpin.Version("listening_port")
+	kingpin.Version("\nlistening_port: " + version +
+		"\nGOVersion: " + runtime.Version() +
+		"\nOS: " + runtime.GOOS +
+		"\nARCH: " + runtime.GOARCH +
+		"\nBuildDate: " + buildTime +
+		"\nBranch: " + branch +
+		"\nCommitHash: " + commitHash)
 	kingpin.CommandLine.GetFlag("help").Short('h')
 	kingpin.Parse()
 
