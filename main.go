@@ -37,7 +37,7 @@ import (
 )
 
 var (
-	version	string
+	version    string
 	buildTime  string
 	commitHash string
 	branch     string
