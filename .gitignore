@@ -3,3 +3,4 @@
 config.yml
 vendor/
 listening_port
+dist
