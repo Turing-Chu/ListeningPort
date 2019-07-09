@@ -25,3 +25,14 @@ go build
 */5 * * * * ./listening_port -c config.yml
 
 ```
+
+## create table in mysql
+
+- create a database
+- import from port\_info.sql
+
+## show in grafana
+
+- import show.json to grafana
+
+![example](./img/example.png)

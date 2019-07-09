@@ -95,10 +95,9 @@ func GetProcessInfos() (processInfos []*ProcessInfo, err error) {
 
 // 获取监听端口进程的 监听地址 监听类型 端口号 进程PID 进程名等信息
 func getNetworks() (processInfos []*ProcessInfo, err error) {
-	cmd := exec.Command("/usr/bin/netstat", "-ltp", "--numeric-ports", "--numeric-hosts")
+	cmd := exec.Command("/usr/sbin/netstat", "-ltp", "--numeric-ports", "--numeric-hosts")
 	outputByte, err := cmd.Output()
 	if err != nil {
-
 		return nil, errors.New(fmt.Sprintf("parse output failed: %s", err.Error()))
 	}
 

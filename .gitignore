@@ -2,5 +2,5 @@
 .idea/
 config.yml
 vendor/
-listening_port
+[lL]istening_port
 dist
